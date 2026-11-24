@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teko Store | Envíos Contra Entrega en todo Paraguay 🇵🇾</title>
+  <meta name="description" content="Comprá en Teko Store y pagá recién al recibir en tu puerta. Envíos en 24-48 hs en Asunción, Gran Asunción y todo Paraguay." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0B192C',
+              emerald: '#064E3B',
+              mint: '#10B981',
+              mintHover: '#059669',
+            }
+          }
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Animaciones suaves para drawer y modales */
+    .drawer-backdrop {
+      transition: opacity 0.25s ease;
+    }
+    .drawer-panel {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Ocultar scrollbar en barra de categorías móvil */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+
+  <!-- Barra superior de confianza (Top Announcement Bar) -->
+  <div class="bg-[#0B192C] text-white text-[11px] sm:text-xs py-2 px-3 border-b border-white/10">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-2 text-center">
+      <div class="flex items-center gap-2 font-medium">
+        <span class="inline-flex items-center gap-1 text-emerald-400 font-semibold">
+          <span>🇵🇾</span> Envíos a todo Paraguay
+        </span>
+        <span class="text-slate-500">•</span>
+        <span>Pagás recién al recibir en tu puerta</span>
+      </div>
+      <div class="hidden md:flex items-center gap-2 text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Entregas en 24–48 hs en Asunción y Gran Asunción</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación Principal (Sticky Header) -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-2xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <!-- Identidad de marca -->
+      <a href="#" class="flex items-center gap-2.5 group shrink-0">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#064E3B] to-[#0B192C] text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+          <svg class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+        </div>
+        <div>
+          <span class="block text-lg sm:text-xl font-extrabold tracking-tight text-[#0B192C] leading-none">
+            Teko <span class="text-emerald-600">Store</span>
+          </span>
+          <span class="block text-[10px] font-semibold uppercase tracking-wider text-slate-500 mt-0.5">
+            Pago Contra Entrega
+          </span>
+        </div>
+      </a>
+
+      <!-- Buscador en escritorio -->
+      <div class="hidden md:block flex-1 max-w-md mx-4">
+        <div class="relative">
+          <input
+            type="search"
+            id="search-desktop"
+            placeholder="Buscar antena TV, mosquitero, pico manguera..."
+            class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-100 border border-transparent focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-sm transition outline-none"
+          />
+          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Acciones derecha: WhatsApp directo + Carrito -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a
+          href="https://wa.me/595994980740?text=Hola%20Teko%20Store%2C%20tengo%20una%20consulta%20sobre%20un%20producto"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-100 border border-slate-200 transition"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>0994 980 740</span>
+        </a>
+
+        <button
+          type="button"
+          id="btn-open-cart"
+          class="relative inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl bg-[#064E3B] hover:bg-[#0B192C] text-white text-xs sm:text-sm font-semibold shadow-sm transition cursor-pointer"
+          aria-label="Abrir carrito de compras"
+        >
+          <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Carrito</span>
+          <span
+            id="header-cart-badge"
+            class="min-w-[20px] h-5 px-1.5 rounded-full bg-emerald-400 text-[#0B192C] text-xs font-extrabold flex items-center justify-center"
+          >
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section orientado a conversión -->
+  <section class="bg-gradient-to-br from-[#0B192C] via-[#0F2942] to-[#064E3B] text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-semibold">
+            <span>🛡️ Compra 100% Segura</span>
+            <span>·</span>
+            <span>Sin pagos por adelantado</span>
+          </div>
+
+          <h1 class="text-2xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight leading-[1.15]">
+            Pedí hoy desde tu celular y <span class="text-emerald-400">pagá recién al recibir</span> en tu casa.
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
+            Productos prácticos y probados para tu hogar, tu vehículo y tu día a día. Entregas rápidas en <strong class="text-white">24 a 48 hs</strong> en Asunción y Gran Asunción, y envíos a todo el interior.
+          </p>
+
+          <div class="pt-1 flex flex-wrap items-center gap-3">
+            <a
+              href="#catalogo"
+              class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#0B192C] font-extrabold text-sm shadow-lg shadow-emerald-950/30 transition"
+            >
+              Ver ofertas disponibles ↓
+            </a>
+            <button
+              type="button"
+              id="hero-open-checkout"
+              class="px-4 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-sm transition cursor-pointer"
+            >
+              Hacer pedido rápido
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjetas de garantías rápidas -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-3.5 sm:p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-lg shrink-0">
+              💵
+            </div>
+            <div>
+              <h2 class="text-xs sm:text-sm font-bold text-white">Pago Contra Entrega</h2>
+              <p class="text-[11px] sm:text-xs text-slate-300 mt-0.5">Pagás en efectivo al delivery cuando tenés el paquete en tus manos.</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-3.5 sm:p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-lg shrink-0">
+              🛵
+            </div>
+            <div>
+              <h2 class="text-xs sm:text-sm font-bold text-white">Entrega Rápida 24–48 hs</h2>
+              <p class="text-[11px] sm:text-xs text-slate-300 mt-0.5">Cobertura ágil en Asunción, Central y envíos a todo Paraguay 🇵🇾.</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-3.5 sm:p-4 flex items-start gap-3">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-lg shrink-0">
+              💬
+            </div>
+            <div>
+              <h2 class="text-xs sm:text-sm font-bold text-white">Confirmación por WhatsApp</h2>
+              <p class="text-[11px] sm:text-xs text-slate-300 mt-0.5">Coordinamos horario y ubicación exacta antes de despachar tu pedido.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Filtros y Buscador Móvil -->
+  <section id="catalogo" class="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-7 pb-4">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-[#0B192C] tracking-tight">Catálogo Destacado</h2>
+        <p class="text-xs sm:text-sm text-slate-500">Seleccioná un artículo para pedirlo ahora mismo contra entrega</p>
+      </div>
+
+      <!-- Buscador móvil -->
+      <div class="md:hidden">
+        <div class="relative">
+          <input
+            type="search"
+            id="search-mobile"
+            placeholder="Buscar producto..."
+            class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-sm outline-none"
+          />
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Píldoras de Categoría -->
+    <div id="category-tabs" class="mt-4 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1"></div>
+  </section>
+
+  <!-- Grilla de Productos -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 pb-16 flex-1">
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"></div>
+
+    <!-- Estado vacío si no hay coincidencias -->
+    <div id="empty-search-state" class="hidden bg-white rounded-3xl border border-slate-200 p-10 text-center my-6">
+      <div class="text-4xl mb-2">🔍</div>
+      <h3 class="text-base font-bold text-slate-900">No encontramos productos con esa búsqueda</h3>
+      <p class="text-xs sm:text-sm text-slate-500 mt-1">Probá borrando el texto o seleccionando la categoría "Todos".</p>
+      <button
+        type="button"
+        id="btn-clear-filters"
+        class="mt-4 px-4 py-2 rounded-xl bg-[#064E3B] text-white text-xs font-semibold hover:bg-[#0B192C] transition cursor-pointer"
+      >
+        Ver todos los productos
+      </button>
+    </div>
+
+    <!-- Sección Cómo funciona comprar en Teko Store -->
+    <section class="mt-14 bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-2xs">
+      <div class="text-center max-w-xl mx-auto mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Súper fácil y sin riesgos</span>
+        <h3 class="text-lg sm:text-2xl font-extrabold text-[#0B192C] mt-1">¿Cómo funciona el Pago Contra Entrega?</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div class="rounded-2xl bg-slate-50 border border-slate-200/70 p-5">
+          <div class="w-8 h-8 rounded-xl bg-[#0B192C] text-emerald-400 font-extrabold text-sm flex items-center justify-center mb-3">
+            1
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">Elegís tu producto</h4>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+            Tocás <strong>"Comprar Ahora Contra Entrega"</strong> o agregás varios artículos al carrito y completás tus datos de envío.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-50 border border-slate-200/70 p-5">
+          <div class="w-8 h-8 rounded-xl bg-[#0B192C] text-emerald-400 font-extrabold text-sm flex items-center justify-center mb-3">
+            2
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">Confirmamos por WhatsApp</h4>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+            Se envía tu orden directo a nuestro WhatsApp (<strong>0994 980 740</strong>) y coordinamos el despacho inmediato.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-slate-50 border border-slate-200/70 p-5">
+          <div class="w-8 h-8 rounded-xl bg-[#0B192C] text-emerald-400 font-extrabold text-sm flex items-center justify-center mb-3">
+            3
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base">Recibís y pagás en puerta</h4>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+            El delivery lleva tu pedido hasta tu casa o trabajo en 24–48 hs y abonás recién cuando lo recibís.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-[#0B192C] text-slate-300 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <div class="text-center sm:text-left space-y-1">
+        <p class="font-bold text-white text-sm">Teko Store Paraguay 🇵🇾</p>
+        <p class="text-slate-400">Envíos contra entrega a todo el país · Atención WhatsApp: +595 994 980 740</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span class="text-slate-400">© <span id="footer-year">2026</span> Teko Store</span>
+        <span class="text-slate-600">•</span>
+        <button
+          type="button"
+          id="btn-backup-html"
+          class="text-slate-400 hover:text-emerald-400 underline underline-offset-2 transition cursor-pointer"
+          title="Descargar respaldo de esta tienda"
+        >
+          Respaldar sitio (.html)
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp (Abajo a la derecha) -->
+  <a
+    href="https://wa.me/595994980740?text=Hola%20Teko%20Store%2C%20quiero%20hacer%20una%20consulta"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Consultar por WhatsApp al +595 994 980 740"
+    class="fixed bottom-5 right-5 z-30 group flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white pl-3.5 pr-4 py-3 rounded-full shadow-xl shadow-emerald-950/25 transition-all hover:scale-105"
+  >
+    <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.33-1.66a11.87 11.87 0 0 0 5.74 1.46h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.17-3.47-8.41ZM12.08 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.76.98 1-3.66-.24-.38a9.85 9.85 0 0 1-1.51-5.24c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.88-9.87 9.88Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
+    </svg>
+    <span class="text-xs sm:text-sm font-bold tracking-tight">¿Consultas?</span>
+  </a>
+
+  <!-- Notificaciones Toast (Sin alert) -->
+  <div id="toast-container" class="fixed top-20 right-4 z-50 flex flex-col gap-2 max-w-xs w-full pointer-events-none"></div>
+
+  <!-- CARRITO LATERAL DESLIZANTE (DRAWER) -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <!-- Fondo oscuro -->
+    <div id="cart-backdrop" class="drawer-backdrop fixed inset-0 bg-slate-950/60 backdrop-blur-xs opacity-0"></div>
+
+    <!-- Panel lateral -->
+    <aside
+      id="cart-panel"
+      class="drawer-panel fixed top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full"
+    >
+      <!-- Cabecera del carrito -->
+      <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-[#0B192C] text-white">
+        <div class="flex items-center gap-2.5">
+          <span class="text-lg">🛒</span>
+          <div>
+            <h3 class="font-bold text-base leading-tight">Tu Carrito</h3>
+            <p class="text-[11px] text-emerald-300">Pago Contra Entrega en puerta</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="btn-close-cart"
+          class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition cursor-pointer"
+          aria-label="Cerrar carrito"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- Lista de items del carrito -->
+      <div id="cart-items-list" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
+
+      <!-- Pie del carrito con subtotal y botón a Checkout -->
+      <div class="border-t border-slate-200 p-5 bg-slate-50 space-y-3.5">
+        <div class="space-y-1.5 text-sm">
+          <div class="flex items-center justify-between text-slate-600">
+            <span>Subtotal productos</span>
+            <span id="drawer-subtotal" class="font-bold text-slate-900">0 Gs</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-emerald-700 bg-emerald-50 border border-emerald-200/80 rounded-xl px-3 py-2">
+            <span>💵 Modalidad de pago</span>
+            <span class="font-bold">Efectivo al recibir</span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          id="btn-proceed-checkout"
+          class="w-full py-3.5 px-4 rounded-xl bg-[#064E3B] hover:bg-[#0B192C] text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>Completar datos de entrega</span>
+          <span>→</span>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- MODAL DE CHECKOUT CONTRA ENTREGA (Optimizado para Dropi Paraguay) -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-modal="true" role="dialog">
+    <div id="checkout-backdrop" class="fixed inset-0 bg-slate-950/70 backdrop-blur-xs"></div>
+
+    <div class="relative min-h-screen flex items-center justify-center p-3 sm:p-5">
+      <div class="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-4">
+        <!-- Encabezado del Modal -->
+        <div class="bg-gradient-to-r from-[#0B192C] to-[#064E3B] text-white px-5 sm:px-6 py-4 flex items-center justify-between">
+          <div>
+            <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-emerald-400/20 text-emerald-300 px-2 py-0.5 rounded-full">
+              Paso Final · Sin Pago Adelantado
+            </span>
+            <h3 class="text-lg sm:text-xl font-extrabold mt-1">Datos para el Envío Contra Entrega</h3>
+          </div>
+          <button
+            type="button"
+            id="btn-close-checkout"
+            class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition cursor-pointer"
+            aria-label="Cerrar ventana de pedido"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="p-5 sm:p-6 space-y-5 max-h-[82vh] overflow-y-auto">
+          <!-- Resumen rápido del pedido -->
+          <div class="rounded-2xl bg-slate-50 border border-slate-200/90 p-4 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Resumen de tu compra</span>
+              <button
+                type="button"
+                id="btn-edit-cart-from-modal"
+                class="text-xs font-semibold text-emerald-700 hover:underline cursor-pointer"
+              >
+                Modificar carrito
+              </button>
+            </div>
+            <div id="checkout-items-summary" class="space-y-1.5 text-xs sm:text-sm text-slate-700"></div>
+            <div class="border-t border-slate-200 pt-2.5 flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-semibold text-slate-700">Total a pagar en efectivo al recibir:</span>
+              <span id="checkout-total-gs" class="text-lg sm:text-xl font-extrabold text-[#064E3B]">0 Gs</span>
+            </div>
+          </div>
+
+          <!-- Formulario con los campos exactos para cargar en Dropi Paraguay -->
+          <form id="cod-order-form" class="space-y-3.5" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label for="f-fullname" class="block text-xs font-semibold text-slate-700 mb-1">
+                  Nombre y Apellido completo *
+                </label>
+                <input
+                  type="text"
+                  id="f-fullname"
+                  required
+                  placeholder="Ej: Carlos González"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-600"
+                />
+              </div>
+
+              <div>
+                <label for="f-whatsapp" class="block text-xs font-semibold text-slate-700 mb-1">
+                  Número de WhatsApp / Teléfono *
+                </label>
+                <input
+                  type="tel"
+                  id="f-whatsapp"
+                  required
+                  placeholder="Ej: 0981 123 456"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-600"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label for="f-department" class="block text-xs font-semibold text-slate-700 mb-1">
+                  Departamento *
+                </label>
+                <select
+                  id="f-department"
+                  required
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-600"
+                >
+                  <option value="Central">Central</option>
+                  <option value="Asunción">Asunción</option>
+                  <option value="Alto Paraná">Alto Paraná</option>
+                  <option value="Itapúa">Itapúa</option>
+                  <option value="Caaguazú">Caaguazú</option>
+                  <option value="Cordillera">Cordillera</option>
+                  <option value="Paraguarí">Paraguarí</option>
+                  <option value="Guairá">Guairá</option>
+                  <option value="San Pedro">San Pedro</option>
+                  <option value="Concepción">Concepción</option>
+                  <option value="Amambay">Amambay</option>
+                  <option value="Canindeyú">Canindeyú</option>
+                  <option value="Misiones">Misiones</option>
+                  <option value="Ñeembucú">Ñeembucú</option>
+                  <option value="Presidente Hayes">Presidente Hayes</option>
+                  <option value="Boquerón">Boquerón</option>
+                  <option value="Alto Paraguay">Alto Paraguay</option>
+                  <option value="Caazapá">Caazapá</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="f-city" class="block text-xs font-semibold text-slate-700 mb-1">
+                  Ciudad *
+                </label>
+                <input
+                  type="text"
+                  id="f-city"
+                  list="cities-paraguay"
+                  required
+                  placeholder="Ej: San Lorenzo, Luque, Asunción..."
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-600"
+                />
+                <datalist id="cities-paraguay">
+                  <option value="San Lorenzo"></option>
+                  <option value="Asunción"></option>
+                  <option value="Fernando de la Mora"></option>
+                  <option value="Luque"></option>
+                  <option value="Lambaré"></option>
+                  <option value="Mariano Roque Alonso"></option>
+                  <option value="Capiatá"></option>
+                  <option value="Ñemby"></option>
+                  <option value="Villa Elisa"></option>
+                  <option value="San Antonio"></option>
+                  <option value="Limpio"></option>
+                  <option value="Itauguá"></option>
+                  <option value="Ciudad del Este"></option>
+                  <option value="Encarnación"></option>
+                  <option value="Coronel Oviedo"></option>
+                  <option value="Caacupé"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <div>
+              <label for="f-address" class="block text-xs font-semibold text-slate-700 mb-1">
+                Dirección exacta y referencias de la casa *
+              </label>
+              <textarea
+                id="f-address"
+                rows="2"
+                required
+                placeholder="Ej: Barrio Barcequillo, calle Los Lapachos c/ 10 de Agosto, casa con portón negro y muralla blanca."
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-600"
+              ></textarea>
+              <p class="text-[11px] text-slate-500 mt-1">
+                Incluí color de portón, calles transversales o punto conocido para que el delivery llegue sin demoras.
+              </p>
+            </div>
+
+            <!-- Botón principal de confirmación por WhatsApp -->
+            <div class="pt-2 space-y-2.5">
+              <button
+                type="submit"
+                class="w-full py-3.5 px-5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-extrabold text-sm sm:text-base shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.33-1.66a11.87 11.87 0 0 0 5.74 1.46h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.17-3.47-8.41ZM12.08 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.76.98 1-3.66-.24-.38a9.85 9.85 0 0 1-1.51-5.24c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.88-9.87 9.88Z"/>
+                </svg>
+                <span>Confirmar Pedido Contra Entrega por WhatsApp</span>
+              </button>
+
+              <button
+                type="button"
+                id="btn-copy-order-summary"
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>📋 Copiar resumen del pedido</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Vista previa del resumen generado (se muestra al generar/copiar) -->
+          <div id="generated-summary-panel" class="hidden rounded-2xl bg-[#0B192C] text-slate-100 p-4 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+                Resumen estructurado del pedido
+              </span>
+              <span class="text-[11px] text-slate-400">Listo para Dropi</span>
+            </div>
+            <pre id="generated-summary-pre" class="text-xs whitespace-pre-wrap font-mono text-slate-200 leading-relaxed"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Catálogo exacto de Teko Store Paraguay con precios en Guaraníes.
+     * Cada producto incluye ilustraciones SVG limpias y vectoriales para máxima velocidad de carga.
+     */
+    const STORE_WHATSAPP = '595994980740';
+
+    const PRODUCTS = [
+      {
+        id: 'antena-tv-hd',
+        name: 'Antena Digital para TV',
+        price: 80000,
+        categories: ['Tecnología', 'Hogar'],
+        badge: 'Más vendido',
+        description: 'Disfrutá canales nacionales en calidad HD totalmente gratis sin pagar cuotas mensuales de cable. Instalación súper rápida en minutos.',
+        highlights: ['Señal HD nítida', 'Sin abono mensual', 'Fácil colocación'],
+        gradient: 'from-sky-50 to-indigo-100/70',
+        svgIcon: `
+          <svg class="w-24 h-24 text-[#0B192C]" viewBox="0 0 80 80" fill="none">
+            <rect x="14" y="24" width="52" height="34" rx="5" fill="#0B192C"/>
+            <rect x="18" y="28" width="44" height="26" rx="2.5" fill="#10B981" fill-opacity="0.22"/>
+            <path d="M29 41h22M40 33v16" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M32 63h16M40 58v5" stroke="#0B192C" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 14 40 24 52 14" stroke="#064E3B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="14" r="2.5" fill="#10B981"/>
+            <circle cx="52" cy="14" r="2.5" fill="#10B981"/>
+            <path d="M22 11a26 26 0 0 1 36 0" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+          </svg>
+        `
+      },
+      {
+        id: 'medidor-presion-intelli',
+        name: 'Medidor de Presión Intelli System',
+        price: 120000,
+        categories: ['Hogar'],
+        badge: 'Salud en casa',
+        description: 'Controlá tu presión arterial y pulso cardíaco de forma rápida y precisa desde la comodidad de tu hogar. Pantalla digital grande y fácil de leer.',
+        highlights: ['Lectura en segundos', 'Pantalla digital clara', 'Brazalete cómodo'],
+        gradient: 'from-emerald-50 to-teal-100/70',
+        svgIcon: `
+          <svg class="w-24 h-24" viewBox="0 0 80 80" fill="none">
+            <rect x="20" y="14" width="40" height="52" rx="8" fill="#0B192C"/>
+            <rect x="26" y="20" width="28" height="24" rx="4" fill="#ECFDF5"/>
+            <path d="M30 33h5l2.5-6 4 11 3-5h5.5" stroke="#059669" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="54" r="5" fill="#10B981"/>
+            <path d="M33 54h2M45 54h2" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        `
+      },
+      {
+        id: 'espejo-punto-ciego',
+        name: 'Espejo Retrovisor para Punto Ciego',
+        price: 52000,
+        categories: ['Auto y Moto'],
+        badge: 'Súper precio',
+        description: 'Manejá con total seguridad y evitá accidentes al cambiar de carril o estacionar. Ángulo amplio ajustable de 360° y adhesivo firme para cualquier vehículo.',
+        highlights: ['Visión panorámica 360°', 'Instalación en 10 seg.', 'Universal auto/camioneta'],
+        gradient: 'from-slate-100 to-blue-100/70',
+        svgIcon: `
+          <svg class="w-24 h-24" viewBox="0 0 80 80" fill="none">
+            <path d="M16 32c0-7.7 6.3-14 14-14h24c5.5 0 10 4.5 10 10v18c0 5.5-4.5 10-10 10H30c-7.7 0-14-6.3-14-14V32Z" fill="#0B192C"/>
+            <circle cx="44" cy="37" r="13" fill="#E2E8F0" stroke="#10B981" stroke-width="2.5"/>
+            <path d="M38 33 48 43M42 30l7 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 54v8h12v-6" stroke="#064E3B" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        `
+      },
+      {
+        id: 'pico-manguera-alta-presion',
+        name: 'Pico Manguera Alta Presión',
+        price: 105000,
+        categories: ['Hogar', 'Auto y Moto'],
+        badge: 'Alta potencia',
+        description: 'Lavá tu auto, moto, vereda o patio con potencia profesional sin gastar en una hidrolavadora costosa. Chorro regulable y cuerpo metálico resistente.',
+        highlights: ['Chorro regulable', 'Ahorra agua y tiempo', 'Acople universal'],
+        gradient: 'from-cyan-50 to-emerald-100/70',
+        svgIcon: `
+          <svg class="w-24 h-24" viewBox="0 0 80 80" fill="none">
+            <path d="M16 42h24l8-8h12v10H48l-8 8H26l-4 12h-8l5-16" fill="#0B192C"/>
+            <rect x="58" y="33" width="6" height="12" rx="2" fill="#064E3B"/>
+            <path d="M66 36l8-4M67 39h9M66 42l8 4" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        `
+      },
+      {
+        id: 'mosquitero-estilo-carpa',
+        name: 'Mosquitero Estilo Carpa',
+        price: 176000,
+        categories: ['Hogar'],
+        badge: 'Protección total',
+        description: 'Dormí tranquilo con protección completa contra mosquitos y dengue. Diseño plegable tipo carpa con cierre, se arma solo sobre la cama sin agujerear paredes.',
+        highlights: ['Cierre perimetral seguro', 'Plegable y portátil', 'Sin clavos ni taladro'],
+        gradient: 'from-teal-50 to-emerald-100/80',
+        svgIcon: `
+          <svg class="w-24 h-24" viewBox="0 0 80 80" fill="none">
+            <path d="M14 54C16 30 27 20 40 20s24 10 26 34H14Z" fill="#10B981" fill-opacity="0.2" stroke="#064E3B" stroke-width="2.8" stroke-linejoin="round"/>
+            <path d="M40 20v34M26 26c4 8 6 18 6 28M54 26c-4 8-6 18-6 28" stroke="#0B192C" stroke-width="1.8" stroke-dasharray="3 2"/>
+            <rect x="12" y="54" width="56" height="6" rx="3" fill="#0B192C"/>
+          </svg>
+        `
+      }
+    ];
+
+    // Estado de la aplicación
+    let cart = {}; // { productId: quantity }
+    let activeCategory = 'Todos';
+    let searchTerm = '';
+
+    /**
+     * Formatea montos en Guaraníes con separador de miles (ej: 80.000 Gs).
+     */
+    function formatGs(amount) {
+      const n = Math.max(0, Math.round(Number(amount) || 0));
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Gs';
+    }
+
+    /**
+     * Muestra un aviso visual no intrusivo en pantalla.
+     */
+    function showToast(text, isError = false) {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+
+      const el = document.createElement('div');
+      el.className = `pointer-events-auto rounded-2xl px-4 py-3 text-xs sm:text-sm font-semibold shadow-lg border flex items-center gap-2 transition-all ${
+        isError
+          ? 'bg-rose-950 text-rose-100 border-rose-700'
+          : 'bg-[#0B192C] text-white border-emerald-500/40'
+      }`;
+      el.innerHTML = `<span class="text-emerald-400">${isError ? '⚠️' : '✓'}</span><span>${text}</span>`;
+      container.appendChild(el);
+
+      setTimeout(() => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(-6px)';
+        setTimeout(() => el.remove(), 220);
+      }, 2600);
+    }
+
+    /**
+     * Renderiza las pestañas de filtro por categoría.
+     */
+    function renderCategoryTabs() {
+      const categories = ['Todos', 'Hogar', 'Auto y Moto', 'Tecnología'];
+      const container = document.getElementById('category-tabs');
+
+      container.innerHTML = categories.map(cat => {
+        const isSelected = activeCategory === cat;
+        return `
+          <button
+            type="button"
+            data-cat="${cat}"
+            class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition cursor-pointer ${
+              isSelected
+                ? 'bg-[#0B192C] text-white shadow-xs'
+                : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-slate-900'
+            }"
+          >
+            ${cat}
+          </button>
+        `;
+      }).join('');
+
+      container.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCategory = btn.dataset.cat;
+          renderCategoryTabs();
+          renderProductsGrid();
+        });
+      });
+    }
+
+    /**
+     * Renderiza el catálogo de productos filtrados.
+     */
+    function renderProductsGrid() {
+      const grid = document.getElementById('products-grid');
+      const emptyState = document.getElementById('empty-search-state');
+      const q = searchTerm.trim().toLowerCase();
+
+      const filtered = PRODUCTS.filter(p => {
+        const matchCat = activeCategory === 'Todos' || p.categories.includes(activeCategory);
+        const matchQuery = !q ||
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.categories.some(c => c.toLowerCase().includes(q));
+        return matchCat && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(prod => `
+        <article class="bg-white rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col justify-between">
+          <div>
+            <!-- Zona visual ilustrativa -->
+            <div class="relative h-44 bg-gradient-to-br ${prod.gradient} flex items-center justify-center p-4 border-b border-slate-100">
+              ${prod.svgIcon}
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#0B192C] text-emerald-300 shadow-2xs">
+                ${prod.badge}
+              </span>
+              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white/90 text-slate-700">
+                ${prod.categories.join(' · ')}
+              </span>
+            </div>
+
+            <!-- Información del producto -->
+            <div class="p-5">
+              <h3 class="text-lg font-extrabold text-[#0B192C] leading-snug">${prod.name}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                ${prod.description}
+              </p>
+
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                ${prod.highlights.map(tag => `
+                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-medium">
+                    <span class="text-emerald-600 font-bold">✓</span> ${tag}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+
+          <!-- Precio y botones de conversión -->
+          <div class="px-5 pb-5 pt-3 border-t border-slate-100 space-y-2.5">
+            <div class="flex items-baseline justify-between">
+              <div>
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Precio final</span>
+                <span class="text-2xl font-extrabold text-[#064E3B]">${formatGs(prod.price)}</span>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">
+                Pagás al recibir
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2 pt-1">
+              <button
+                type="button"
+                onclick="buyNowCOD('${prod.id}')"
+                class="w-full py-3 px-4 rounded-xl bg-[#064E3B] hover:bg-[#0B192C] text-white font-bold text-xs sm:text-sm shadow-xs transition cursor-pointer"
+              >
+                Comprar Ahora Contra Entrega
+              </button>
+              <button
+                type="button"
+                onclick="addToCart('${prod.id}')"
+                class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition cursor-pointer"
+              >
+                + Agregar al carrito
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    /**
+     * Devuelve los ítems actuales del carrito con su detalle y subtotal.
+     */
+    function getCartDetails() {
+      const items = Object.entries(cart)
+        .map(([id, qty]) => {
+          const product = PRODUCTS.find(p => p.id === id);
+          return product && qty > 0 ? { product, qty, lineTotal: product.price * qty } : null;
+        })
+        .filter(Boolean);
+
+      const totalQty = items.reduce((acc, item) => acc + item.qty, 0);
+      const subtotal = items.reduce((acc, item) => acc + item.lineTotal, 0);
+      return { items, totalQty, subtotal };
+    }
+
+    /**
+     * Agrega una unidad al carrito y actualiza los contadores.
+     */
+    function addToCart(productId, silent = false) {
+      const exists = PRODUCTS.some(p => p.id === productId);
+      if (!exists) return;
+
+      cart[productId] = (cart[productId] || 0) + 1;
+      updateCartUI();
+      if (!silent) {
+        showToast('Agregado al carrito');
+      }
+    }
+
+    /**
+     * Compra directa: asegura al menos 1 unidad del producto y abre el modal de Checkout.
+     */
+    function buyNowCOD(productId) {
+      if (!cart[productId] || cart[productId] < 1) {
+        cart[productId] = 1;
+      }
+      updateCartUI();
+      openCheckoutModal();
+    }
+
+    /**
+     * Modifica cantidad en el carrito (+1 / -1).
+     */
+    function updateCartQty(productId, delta) {
+      const next = (cart[productId] || 0) + delta;
+      if (next <= 0) {
+        delete cart[productId];
+      } else {
+        cart[productId] = next;
+      }
+      updateCartUI();
+    }
+
+    /**
+     * Actualiza el drawer del carrito, los badges y el resumen dentro del modal de checkout.
+     */
+    function updateCartUI() {
+      const { items, totalQty, subtotal } = getCartDetails();
+
+      document.getElementById('header-cart-badge').textContent = String(totalQty);
+      document.getElementById('drawer-subtotal').textContent = formatGs(subtotal);
+      document.getElementById('checkout-total-gs').textContent = formatGs(subtotal);
+
+      const drawerList = document.getElementById('cart-items-list');
+      const proceedBtn = document.getElementById('btn-proceed-checkout');
+
+      if (items.length === 0) {
+        drawerList.innerHTML = `
+          <div class="text-center py-12 px-4">
+            <div class="text-4xl mb-2">🛍️</div>
+            <p class="font-bold text-slate-800 text-sm">Tu carrito está vacío</p>
+            <p class="text-xs text-slate-500 mt-1">Elegí algún producto del catálogo para pedirlo contra entrega.</p>
+          </div>
+        `;
+        proceedBtn.disabled = true;
+        proceedBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        proceedBtn.disabled = false;
+        proceedBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        drawerList.innerHTML = items.map(({ product, qty, lineTotal }) => `
+          <div class="rounded-2xl border border-slate-200 p-3.5 bg-white flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 truncate">${product.name}</h4>
+              <p class="text-xs text-slate-500 mt-0.5">${formatGs(product.price)} c/u · Subtotal: <strong class="text-slate-800">${formatGs(lineTotal)}</strong></p>
+            </div>
+
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onclick="updateCartQty('${product.id}', -1)"
+                class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 font-bold text-slate-800 text-sm flex items-center justify-center cursor-pointer"
+                aria-label="Restar unidad"
+              >−</button>
+              <span class="w-6 text-center text-xs font-extrabold text-slate-900">${qty}</span>
+              <button
+                type="button"
+                onclick="updateCartQty('${product.id}', 1)"
+                class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 font-bold text-slate-800 text-sm flex items-center justify-center cursor-pointer"
+                aria-label="Sumar unidad"
+              >+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Actualizar resumen dentro del modal de Checkout
+      const checkoutSummary = document.getElementById('checkout-items-summary');
+      if (items.length === 0) {
+        checkoutSummary.innerHTML = `<p class="text-xs text-slate-500">No hay productos seleccionados todavía.</p>`;
+      } else {
+        checkoutSummary.innerHTML = items.map(({ product, qty, lineTotal }) => `
+          <div class="flex items-center justify-between gap-2">
+            <span><strong>${qty}x</strong> ${product.name}</span>
+            <span class="font-semibold text-slate-900">${formatGs(lineTotal)}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    /**
+     * Abre y cierra el carrito lateral deslizante.
+     */
+    function openCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      const backdrop = document.getElementById('cart-backdrop');
+      const panel = document.getElementById('cart-panel');
+
+      drawer.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('translate-x-full');
+      });
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      const backdrop = document.getElementById('cart-backdrop');
+      const panel = document.getElementById('cart-panel');
+
+      backdrop.classList.add('opacity-0');
+      panel.classList.add('translate-x-full');
+      setTimeout(() => {
+        drawer.classList.add('hidden');
+      }, 280);
+    }
+
+    /**
+     * Abre y cierra el modal de Checkout Contra Entrega.
+     */
+    function openCheckoutModal() {
+      const { items } = getCartDetails();
+      if (items.length === 0) {
+        // Si el carrito está vacío, agregar el primer producto por defecto para facilitar pedido rápido
+        addToCart(PRODUCTS[0].id, true);
+      }
+      closeCartDrawer();
+      document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+    }
+
+    /**
+     * Valida el formulario y construye el mensaje estructurado listo para Dropi y WhatsApp.
+     */
+    function buildFormattedOrderMessage(validateFields = true) {
+      const { items, subtotal } = getCartDetails();
+      if (items.length === 0) {
+        showToast('Agregá al menos un producto antes de confirmar', true);
+        return null;
+      }
+
+      const fullName = document.getElementById('f-fullname').value.trim();
+      const phone = document.getElementById('f-whatsapp').value.trim();
+      const department = document.getElementById('f-department').value.trim();
+      const city = document.getElementById('f-city').value.trim();
+      const address = document.getElementById('f-address').value.trim();
+
+      if (validateFields) {
+        if (!fullName || !phone || !city || !address) {
+          showToast('Completá tu nombre, WhatsApp, ciudad y dirección', true);
+          return null;
+        }
+      }
+
+      const productLines = items.map(
+        ({ product, qty, lineTotal }) => `• ${qty}x ${product.name} — ${formatGs(lineTotal)}`
+      );
+
+      const message = [
+        `🛒 *NUEVO PEDIDO CONTRA ENTREGA — TEKO STORE*`,
+        `━━━━━━━━━━━━━━━━━━━━`,
+        `*Productos:*`,
+        ...productLines,
+        `━━━━━━━━━━━━━━━━━━━━`,
+        `💵 *TOTAL A COBRAR AL RECIBIR: ${formatGs(subtotal)}*`,
+        ``,
+        `📍 *DATOS DE ENVÍO (DROPI):*`,
+        `• *Cliente:* ${fullName || 'Pendiente'}`,
+        `• *WhatsApp / Tel:* ${phone || 'Pendiente'}`,
+        `• *Departamento:* ${department}`,
+        `• *Ciudad:* ${city || 'Pendiente'}`,
+        `• *Dirección y Ref.:* ${address || 'Pendiente'}`,
+        `• *Pago:* Contra Entrega (Efectivo)`
+      ].join('\n');
+
+      // Mostrar también en el bloque visual del modal
+      const panel = document.getElementById('generated-summary-panel');
+      const pre = document.getElementById('generated-summary-pre');
+      pre.textContent = message;
+      panel.classList.remove('hidden');
+
+      return message;
+    }
+
+    /**
+     * Copia un texto al portapapeles de forma compatible con navegadores y iframes.
+     */
+    function copyTextFallback(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      let success = false;
+      try {
+        success = document.execCommand('copy');
+      } catch (e) {
+        success = false;
+      }
+      document.body.removeChild(textarea);
+      return success;
+    }
+
+    /**
+     * Permite respaldar el HTML completo de la tienda si el dueño desea descargarlo.
+     */
+    function downloadStoreBackup() {
+      try {
+        const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'teko-store-paraguay.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Archivo teko-store-paraguay.html descargado');
+      } catch (e) {
+        showToast('No se pudo descargar el respaldo', true);
+      }
+    }
+
+    // Inicialización de eventos
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('footer-year').textContent = String(new Date().getFullYear());
+
+      renderCategoryTabs();
+      renderProductsGrid();
+      updateCartUI();
+
+      // Sincronizar buscadores (desktop y móvil)
+      const searchDesktop = document.getElementById('search-desktop');
+      const searchMobile = document.getElementById('search-mobile');
+
+      const handleSearch = val => {
+        searchTerm = val;
+        if (searchDesktop && searchDesktop.value !== val) searchDesktop.value = val;
+        if (searchMobile && searchMobile.value !== val) searchMobile.value = val;
+        renderProductsGrid();
+      };
+
+      searchDesktop?.addEventListener('input', e => handleSearch(e.target.value));
+      searchMobile?.addEventListener('input', e => handleSearch(e.target.value));
+
+      document.getElementById('btn-clear-filters')?.addEventListener('click', () => {
+        activeCategory = 'Todos';
+        handleSearch('');
+        renderCategoryTabs();
+      });
+
+      // Controles del carrito lateral
+      document.getElementById('btn-open-cart').addEventListener('click', openCartDrawer);
+      document.getElementById('btn-close-cart').addEventListener('click', closeCartDrawer);
+      document.getElementById('cart-backdrop').addEventListener('click', closeCartDrawer);
+      document.getElementById('btn-proceed-checkout').addEventListener('click', openCheckoutModal);
+
+      // Controles del modal de Checkout
+      document.getElementById('hero-open-checkout').addEventListener('click', openCheckoutModal);
+      document.getElementById('btn-close-checkout').addEventListener('click', closeCheckoutModal);
+      document.getElementById('checkout-backdrop').addEventListener('click', closeCheckoutModal);
+      document.getElementById('btn-edit-cart-from-modal').addEventListener('click', () => {
+        closeCheckoutModal();
+        openCartDrawer();
+      });
+
+      // Envío de formulario hacia WhatsApp (+595994980740)
+      document.getElementById('cod-order-form').addEventListener('submit', e => {
+        e.preventDefault();
+        const message = buildFormattedOrderMessage(true);
+        if (!message) return;
+
+        const waUrl = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        showToast('Abriendo WhatsApp con tu pedido listo...');
+      });
+
+      // Botón de copiar resumen (útil en PC sin WhatsApp instalado)
+      document.getElementById('btn-copy-order-summary').addEventListener('click', () => {
+        const message = buildFormattedOrderMessage(false);
+        if (!message) return;
+
+        if (copyTextFallback(message)) {
+          showToast('Resumen copiado al portapapeles');
+        } else {
+          showToast('Resumen generado arriba para copiar', true);
+        }
+      });
+
+      // Respaldo discreto del archivo HTML
+      document.getElementById('btn-backup-html').addEventListener('click', downloadStoreBackup);
+    });
+  </script>
+</body>
+</html>
